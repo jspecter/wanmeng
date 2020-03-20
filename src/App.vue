@@ -13,5 +13,7 @@
 </script>
 
 <style lang="scss">
-	/*每个页面公共css */
+     page ,view{
+         box-sizing: border-box;
+     }
 </style>

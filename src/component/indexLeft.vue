@@ -1,11 +1,11 @@
 <template>
-    <scroll-view class="index-left">
+    <view class="index-left">
          <template v-for="item in toolBoxes">
              <view class="tool-item" :key="item.id">
                  {{item.name}}
              </view>
          </template>
-    </scroll-view>
+    </view>
 </template>
 <script>
 	export default {
@@ -37,5 +37,21 @@
 	}
 </script>
 <style lang="scss">
-
+    .index-left{
+        display: flex;
+        width:375rpx;
+        min-height:calc(100% - 50px);
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .tool-item{
+        width:250rpx;
+        height:250rpx;
+        box-sizing: border-box;
+        padding: 50rpx 30rpx;
+        border-radius: 50%;
+        border:1px solid $gray-color;
+        text-align: center;
+    }
 </style>

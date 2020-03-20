@@ -39,10 +39,10 @@
         display: flex;
         flex-flow:row nowrap;
         width:100vw;
-        min-height:100vh;
+        height:calc(100% - 50px);
     }
 
     .cut-left {
-        border-right: 1rpx solid $normal-color;
+        border-right: 1rpx solid $gray-color;
     }
 </style>

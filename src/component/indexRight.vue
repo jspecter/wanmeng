@@ -1,5 +1,7 @@
 <template>
-    <scroll-view class="index_right"></scroll-view>
+    <scroll-view class="index_right">
+
+    </scroll-view>
 </template>
 <script>
 	export default {

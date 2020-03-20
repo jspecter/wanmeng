@@ -1,42 +1,52 @@
 <template>
-	<view id="index-page">
-         <cut-page>
-             <template slot="left">
-               <index-left></index-left>
-             </template>
-             <template slot="right">
-               <index-right></index-right>
-             </template>
-         </cut-page>
-	</view>
+    <view id="index-page">
+        <view class="index-mask">
+            <today></today>
+            <cut-page>
+                <template slot="indexLeft">
+                    <index-left></index-left>
+                </template>
+                <template slot="indexRight">
+                    <index-right></index-right>
+                </template>
+            </cut-page>
+        </view>
+    </view>
 </template>
 
 <script>
-    import CutPage from '@/component/cutPage.vue';
-    import IndexLeft from '@/component/indexLeft.vue';
-    import IndexRight from '@/component/indexRight.vue';
+import Today from '@/component/today.vue';
+import CutPage from '@/component/cutPage.vue';
+import IndexLeft from '@/component/indexLeft.vue';
+import IndexRight from '@/component/indexRight.vue';
 
-	export default {
-        name:'IndexPage',
-        components:{
-            CutPage
-        },
-        data() {
-			return {
-			}
-		},
-		onLoad() {
-           console.log(IndexLeft,IndexRight);
-		},
-		methods: {
-
-		}
-	}
+export default {
+    name: 'IndexPage',
+    components: {
+        Today,
+        CutPage,
+        IndexLeft,
+        IndexRight
+    },
+    data() {
+        return {};
+    },
+    onLoad() {},
+    methods: {}
+};
 </script>
 
 <style>
-	#index-page {
-        width: 100vw;
-        height: 100vh;
-    }
+#index-page {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url("../../static/boy.png"); */
+    background-repeat: no-repeat;
+    background-position: center -250rpx;
+}
+
+.index-mask {
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.1);
+}
 </style>
