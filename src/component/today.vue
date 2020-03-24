@@ -14,12 +14,24 @@ export default {
     },
     methods: {},
     mounted() {
+        let self = this;
         uni.getLocation({
             type: 'wgs84',
-            success: function(res) {
-                this.location = res;
-                console.log('当前位置的经度：' + res.longitude);
-                console.log('当前位置的纬度：' + res.latitude);
+            success: function(location) {
+                console.log('当前位置的经度：' + location.longitude);
+                console.log('当前位置的纬度：' + location.latitude);
+
+                uni.request({
+                    url: 'http://localhost:3000/weather',
+                    data: {
+                        location: `${location.longitude}:${location.latitude}`
+                    },
+                    dataType: 'json',
+                    success: res => {
+                        console.log(res.data);
+                        this.text = 'request success';
+                    }
+                });
             }
         });
     }
