@@ -1,7 +1,9 @@
 <template>
     <view class="today">
         <view class="weather">
-            <span class="city"></span>
+            <span class="path">{{ location.path }}</span>
+            <span class="now">{{ now.text }}</span>
+            <span class="now">{{ now.temperature }}</span>
         </view>
     </view>
 </template>
@@ -9,31 +11,30 @@
 export default {
     data() {
         return {
-            location: {}
+            location: {},
+            now: {}
         };
     },
     methods: {},
     mounted() {
-        let self = this;
-        uni.getLocation({
-            type: 'wgs84',
-            success: function(location) {
-                console.log('当前位置的经度：' + location.longitude);
-                console.log('当前位置的纬度：' + location.latitude);
-
-                uni.request({
-                    url: 'http://localhost:3000/weather',
-                    data: {
-                        location: `${location.longitude}:${location.latitude}`
-                    },
-                    dataType: 'json',
-                    success: res => {
-                        console.log(res.data);
-                        this.text = 'request success';
-                    }
-                });
-            }
-        });
+        // let self = this;
+        // uni.getLocation({
+        //     type: 'wgs84',
+        //     success: function(location) {
+        //         uni.request({
+        //             url: 'http://localhost:3000/weather',
+        //             data: {
+        //                 location: `${location.latitude}:${location.longitude}`
+        //             },
+        //             dataType: 'json',
+        //             success: ({ data }) => {
+        //                 const { location, now } = data.results[0];
+        //                 self.location = location;
+        //                 self.now = now;
+        //             }
+        //         });
+        //     }
+        // });
     }
 };
 </script>
