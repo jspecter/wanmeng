@@ -30,14 +30,13 @@ export default {
     },
     data() {
         return {};
-    },
-    onLoad() {},
-    methods: {}
+    }
 };
 </script>
 
-<style>
+<style lang="scss">
 #index-page {
+    position: relative;
     width: 100vw;
     height: 100vh;
     /* background-image: url("../../static/boy.png"); */
@@ -47,6 +46,6 @@ export default {
 
 .index-mask {
     height: inherit;
-    background-color: rgba(0, 0, 0, 0.1);
+    //   background-color: rgba(0, 0, 0, 0.1);
 }
 </style>

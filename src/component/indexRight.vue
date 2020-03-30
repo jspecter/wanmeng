@@ -1,13 +1,19 @@
 <template>
     <view class="index_right">
+        <points></points>
         <scroll-view class="scroll-bar" scroll-y="true" :scroll-top="0">
             <view v-for="item in 14" :key="item" class="day"></view>
         </scroll-view>
     </view>
 </template>
 <script>
+import Points from './points.vue';
+
 export default {
     name: 'IndexRight',
+    components: {
+        Points
+    },
     data() {
         return {};
     },
@@ -17,6 +23,7 @@ export default {
 </script>
 <style lang="scss">
 .index_right {
+    position: relative;
     width: 100%;
     height: calc(100vh - 50px);
     .scroll-bar {
@@ -25,10 +32,7 @@ export default {
 }
 .day {
     height: 7.14%;
-    background-color: #fff;
-    border-bottom: 1px solid $gray-color;
-    background-image: url('../static/day_back.jpg') no-repeat;
-    background-size: contain;
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.6);
     &:last-child {
         border-bottom: none;
     }
