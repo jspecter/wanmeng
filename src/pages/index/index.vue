@@ -39,13 +39,13 @@ export default {
     position: relative;
     width: 100vw;
     height: 100vh;
-    /* background-image: url("../../static/boy.png"); */
+    // background-image: url('../../static/boy.png');
     background-repeat: no-repeat;
     background-position: center -250rpx;
 }
 
 .index-mask {
     height: inherit;
-    //   background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 </style>
