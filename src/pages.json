@@ -1,12 +1,38 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
+        {
+			"path": "pages/food/food",
+			"style": {
+				"navigationBarTitleText": "食物健康"
+            }
+        },
+        {
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "万萌"
 			}
+		},
+		{
+			"path": "pages/treasure/treasure",
+			"style": {
+				"navigationBarTitleText": "百宝箱"
+            }
 		}
-	],
+
+    ],
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+            "pagePath": "pages/index/index",
+            "text":"主页"
+        }, {
+            "pagePath": "pages/treasure/treasure",
+            "text": "百宝箱"
+        }]
+    },
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

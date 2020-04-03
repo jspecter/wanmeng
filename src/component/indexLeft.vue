@@ -1,7 +1,7 @@
 <template>
     <view class="index-left">
         <template v-for="item in toolBoxes">
-            <view class="tool-item" :key="item.id">
+            <view class="tool-item" :key="item.id" @click="onClickItem(item)">
                 {{ item.name }}
             </view>
         </template>
@@ -28,8 +28,21 @@ export default {
             ]
         };
     },
-    onLoad() {},
-    methods: {}
+    methods: {
+        onClickItem({ id, name }) {
+            switch (id) {
+                case 0: {
+                    uni.navigateTo({
+                        url: '/pages/treasure/treasure'
+                    });
+                    break;
+                }
+
+                default:
+                    break;
+            }
+        }
+    }
 };
 </script>
 <style lang="scss">
